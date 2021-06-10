@@ -1,0 +1,12 @@
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/bin/Debug/netcoreapp3.1/Chat.Services.deps.json
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/bin/Debug/netcoreapp3.1/Chat.Services.dll
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/bin/Debug/netcoreapp3.1/Chat.Services.pdb
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/bin/Debug/netcoreapp3.1/Chat.Data.dll
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/bin/Debug/netcoreapp3.1/Chat.Data.pdb
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.AssemblyInfoInputs.cache
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.AssemblyInfo.cs
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.csproj.CoreCompileInputs.cache
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.csproj.CopyComplete
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.dll
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.pdb
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/obj/Debug/netcoreapp3.1/Chat.Services.csproj.AssemblyReference.cache

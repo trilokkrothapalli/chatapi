@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{84BB1253-58CE-4F03-92AE-A337BE9C27FF}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChatAPI/Hubs/ChatHub.cs">
+    <Files>
+      <File FileName="Chat.Data/Models/ApplicationUser.cs" Line="10" Column="36" />
+      <File FileName="Chat.Data/Context/ChatDbContext.cs" Line="20" Column="1" />
+      <File FileName="ChatAPI/Startup.cs" Line="51" Column="13" />
+      <File FileName="ChatAPI/Program.cs" Line="15" Column="69" />
+      <File FileName="ChatAPI/Controllers/UserController.cs" Line="27" Column="1" />
+      <File FileName="Chat.Services/Models/UserModel.cs" Line="3" Column="18" />
+      <File FileName="Chat.Data/GenericRepository/ApplicationRepository.cs" Line="52" Column="1" />
+      <File FileName="Chat.Services/ApplicationUserService.cs" Line="32" Column="1" />
+      <File FileName="ChatAPI/Hubs/ChatHub.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ChatAPI" expanded="True">
+            <Node name="Chat.Data" expanded="True">
+              <Node name="Context" expanded="True" />
+              <Node name="GenericRepository" expanded="True" />
+            </Node>
+            <Node name="Chat.Services" expanded="True">
+              <Node name="Models" expanded="True" />
+            </Node>
+            <Node name="ChatAPI" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Hubs" expanded="True">
+                <Node name="ChatHub.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ChatAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/krothapallitrilok/repos/ChatAPI/Chat.Services/ApplicationUserService.cs" relfile="Chat.Services/ApplicationUserService.cs" line="32" column="1" />
+      <Breakpoint file="/Users/krothapallitrilok/repos/ChatAPI/ChatAPI/Controllers/UserController.cs" relfile="ChatAPI/Controllers/UserController.cs" line="27" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

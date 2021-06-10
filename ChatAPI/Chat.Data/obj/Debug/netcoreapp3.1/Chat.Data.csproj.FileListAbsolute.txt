@@ -1,0 +1,12 @@
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/bin/Debug/netcoreapp3.1/Chat.Data.deps.json
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/bin/Debug/netcoreapp3.1/Chat.Data.dll
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/bin/Debug/netcoreapp3.1/Chat.Data.pdb
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.AssemblyInfoInputs.cache
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.AssemblyInfo.cs
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.csproj.CoreCompileInputs.cache
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.dll
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.pdb
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/bin/Debug/netcoreapp3.1/Chat.Data.runtimeconfig.json
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/bin/Debug/netcoreapp3.1/Chat.Data.runtimeconfig.dev.json
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.genruntimeconfig.cache
+/Users/krothapallitrilok/repos/ChatAPI/Chat.Data/obj/Debug/netcoreapp3.1/Chat.Data.csproj.AssemblyReference.cache
