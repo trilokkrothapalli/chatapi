@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Chat.Services.Interfaces;
 using Chat.Services.Models;
@@ -30,14 +31,38 @@ namespace ChatAPI.Hubs
                     _Connections.Add(userViewModel);
                     _ConnectionsMap.Add(id, Context.ConnectionId);
                 }
-
-                Clients.Caller.SendAsync("getProfileInfo", userViewModel.FullName, userViewModel.Avatar);
             }
             catch (Exception ex)
             {
                 Clients.Caller.SendAsync("onError", "OnConnected:" + ex.Message);
             }
             return base.OnConnectedAsync();
+        }
+
+        public async Task SendPrivateMessage(int receiverUserId, string message)
+        {
+            if (_ConnectionsMap.TryGetValue(receiverUserId, out string connectionId))
+            {
+                // Who is the sender;
+                var sender = _Connections.Where(u => u.Id == GetId()).First();
+
+                if (!string.IsNullOrEmpty(message.Trim()))
+                {
+                    // Build the message
+                    var messageViewModel = new MessageModel()
+                    {
+                        Content = Regex.Replace(message, @"(?i)<(?!img|a|/a|/img).*?>", string.Empty),
+                        From = sender.FullName,
+                        Avatar = sender.Avatar,
+                        Room = "",
+                        Date = DateTime.Now
+                    };
+
+                    // Send the message
+                    await Clients.Client(connectionId).SendAsync("NewMessage", messageViewModel);
+                    //await Clients.Caller.SendAsync("NewMessage", messageViewModel);
+                }
+            }
         }
 
         public override Task OnDisconnectedAsync(Exception exception)

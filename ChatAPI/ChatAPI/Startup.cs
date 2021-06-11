@@ -34,8 +34,11 @@ namespace ChatAPI
             ConfigureRepositories(services);
             ConfigureService(services);
             services.AddControllers();
-            services.AddSignalR();
-            services.AddCors(options => options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+            services.AddSignalR(options =>
+            {
+                options.EnableDetailedErrors = true;
+            });
+            services.AddCors(options => options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
             services.AddSingleton<IMapper>(sp => AutoMapperConfig.Create());
             
         }
