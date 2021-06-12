@@ -65,6 +65,7 @@ namespace ChatAPI
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chatHub");
+                endpoints.MapHub<NotificationHub>("/Notification");
             });
         }
 

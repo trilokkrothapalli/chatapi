@@ -6,10 +6,8 @@ namespace Chat.Services.Models
         
             
             public string Content { get; set; }
-            public DateTime Date { get; set; }
-            public string From { get; set; }
-            public string Room { get; set; }
-            public string Avatar { get; set; }
+            public string  CreatedAt { get; set; }
+            public UserModel User { get; set; }
         
     }
 }

@@ -10,7 +10,10 @@ namespace Chat.Services.MappingProfile
     {
         public UserProfile()
         {
-            CreateMap<ApplicationUser, UserModel>().ReverseMap();
+            CreateMap<ApplicationUser, UserModel>().ForMember(x => x.DisplayName, map => map.MapFrom(y=>y.FullName))
+                                                   .ForMember(x => x.PhotoUrl, map => map.MapFrom(y => y.Avatar))
+                                                   .ForMember(x => x.Uid, map => map.MapFrom(y => y.Id.ToString()))
+                                                   .ReverseMap();
             CreateMap<IEnumerable<ApplicationUser>, IEnumerable<UserModel>>().ReverseMap();
         }
     }

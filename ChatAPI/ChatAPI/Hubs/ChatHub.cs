@@ -19,17 +19,18 @@ namespace ChatAPI.Hubs
             this.applicationUserService = applicationUserService;
         }
 
-        public override Task OnConnectedAsync()
+        public Task AddUsers(int userId)
         {
             try
             {
-                int id = GetId();  
-                var userViewModel =  applicationUserService.GetUserById(id).Result;
+               
+                var userViewModel =  applicationUserService.GetUserById(userId).Result;
 
-                if (!_Connections.Any(u => u.Id == id))
+                if (!_Connections.Any(u => u.Uid == userId.ToString()))
                 {
                     _Connections.Add(userViewModel);
-                    _ConnectionsMap.Add(id, Context.ConnectionId);
+                    _ConnectionsMap.Add(userId, Context.ConnectionId);
+                    Clients.Caller.SendAsync("getUser", userViewModel);
                 }
             }
             catch (Exception ex)
@@ -39,12 +40,11 @@ namespace ChatAPI.Hubs
             return base.OnConnectedAsync();
         }
 
-        public async Task SendPrivateMessage(int receiverUserId, string message)
+        public async Task SendPrivateMessage(int receiverUserId, string message, string dateTime, UserModel sender)
         {
             if (_ConnectionsMap.TryGetValue(receiverUserId, out string connectionId))
             {
                 // Who is the sender;
-                var sender = _Connections.Where(u => u.Id == GetId()).First();
 
                 if (!string.IsNullOrEmpty(message.Trim()))
                 {
@@ -52,10 +52,9 @@ namespace ChatAPI.Hubs
                     var messageViewModel = new MessageModel()
                     {
                         Content = Regex.Replace(message, @"(?i)<(?!img|a|/a|/img).*?>", string.Empty),
-                        From = sender.FullName,
-                        Avatar = sender.Avatar,
-                        Room = "",
-                        Date = DateTime.Now
+                        CreatedAt = dateTime,
+                        User = sender
+
                     };
 
                     // Send the message
@@ -65,26 +64,7 @@ namespace ChatAPI.Hubs
             }
         }
 
-        public override Task OnDisconnectedAsync(Exception exception)
-        {
-            try
-            {
-                var user = _Connections.Where(u => u.Id == GetId()).First();
-                _Connections.Remove(user);
-
-                // Tell other users to remove you from their list
-                //Clients.OthersInGroup(user.CurrentRoom).SendAsync("removeUser", user);
-
-                // Remove mapping
-                _ConnectionsMap.Remove(user.Id);
-            }
-            catch (Exception ex)
-            {
-                Clients.Caller.SendAsync("onError", "OnDisconnected: " + ex.Message);
-            }
-
-            return base.OnDisconnectedAsync(exception);
-        }
+       
 
         private int GetId()
         {
